@@ -26,10 +26,13 @@ namespace BankDIO
                         InsertAccount();
                         break;
                     case "3":
+                        Transfer();
                         break;
                     case "4":
+                        Withdraw();
                         break;
                     case "5":
+                        Deposit();
                         break;
                     case "C":
                         Console.Clear();
@@ -44,6 +47,64 @@ namespace BankDIO
                 }
             }
             Console.WriteLine("\nThank you for using our services!");
+            Console.ReadKey();
+        }
+
+        private static void Transfer()
+        {
+            string originCode, destinationCode;
+            double transferValue;
+            do{
+                Console.WriteLine("Type the origin account's code: ");
+                originCode = Console.ReadLine();
+            }
+            while(originCode.Length != 6);
+            do{
+                Console.WriteLine("Type the destination account's code: ");
+                destinationCode = Console.ReadLine();
+            }
+            while(destinationCode.Length != 6 || destinationCode == originCode);
+            do{
+                Console.WriteLine("Type the value you want to transfer: ");
+                transferValue = double.Parse(Console.ReadLine());
+            }
+            while(transferValue <= 0);
+            accountsList[accountsList.FindIndex(account => account.getCode() == originCode)].transfer(transferValue, accountsList[accountsList.FindIndex(account => account.getCode() == destinationCode)]);
+        }
+
+        private static void Deposit()
+        {
+            string code;
+            double depositValue;
+            do{
+                Console.WriteLine("Type the account's code: ");
+                code = Console.ReadLine();
+            }
+            while(code.Length != 6);
+            do{
+                Console.WriteLine("Type the value you want to deposit: ");
+                depositValue = double.Parse(Console.ReadLine());
+            }
+            while(depositValue <= 0);
+            accountsList[accountsList.FindIndex(account => account.getCode() == code)].Deposit(depositValue);
+            Console.ReadKey();
+        }
+
+        private static void Withdraw()
+        {
+            string code;
+            double withdrawalValue;
+            do{
+                Console.WriteLine("Type the account's code: ");
+                code = Console.ReadLine();
+            }
+            while(code.Length != 6);
+            do{
+                Console.WriteLine("Type the value you want to withdraw: ");
+                withdrawalValue = double.Parse(Console.ReadLine());
+            }
+            while(withdrawalValue <= 0);
+            accountsList[accountsList.FindIndex(account => account.getCode() == code)].Withdraw(withdrawalValue);
             Console.ReadKey();
         }
 
@@ -67,7 +128,7 @@ namespace BankDIO
         {
             int inputAccountType;
             double inputBalance, inputCredit;
-            string inputOwner;
+            string inputOwner, inputCode;
             Console.WriteLine("\nInsert new account");
             Console.WriteLine("Type 1 for natural account or 2 for legal account: ");
             while(!int.TryParse(Console.ReadLine(), out inputAccountType))
@@ -86,7 +147,13 @@ namespace BankDIO
             {
                 Console.WriteLine("Type the credit value: ");
             }
+            do{
+                Console.WriteLine("Type the account's code: ");
+                inputCode = Console.ReadLine();
+            }
+            while(inputCode.Length != 6 || accountsList.Contains(accountsList.Find(account => account.getCode() == inputCode)));
             Account newAccount = new Account(
+                code: inputCode,
                 accountType: (AccountType)inputAccountType,
                 balance: inputBalance,
                 credit: inputCredit,

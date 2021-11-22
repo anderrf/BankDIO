@@ -5,13 +5,15 @@ namespace BankDIO.Classes
 {
     public class Account
     {
+        private string code { get; }
         private AccountType accountType { get; set; }
         private double balance { get; set; }
         private double credit { get; set; }
         private string owner { get; set; }
 
-        public Account(AccountType accountType, double balance, double credit, string owner)
+        public Account(string code, AccountType accountType, double balance, double credit, string owner)
         {
+            this.code = code;
             this.accountType = accountType;
             this.balance = balance;
             this.credit = credit;
@@ -26,21 +28,21 @@ namespace BankDIO.Classes
                 return false;
             }
             this.balance -= withdrawalValue;
-            Console.WriteLine("New balance for {0}'s account is {1:F2}", this.owner, this.balance);
+            Console.WriteLine("New balance for {0}'s account is US$ {1:F2}", this.owner, this.balance);
             return true;
         }
 
         public void Deposit(double depositValue)
         {
             this.balance += depositValue;
-            Console.WriteLine("New balance for {0}'s account is {1:F2}", this.owner, this.balance);
+            Console.WriteLine("New balance for {0}'s account is US$ {1:F2}", this.owner, this.balance);
         }
 
-        public void transfer(double transferValue, Account destinyAccount)
+        public void transfer(double transferValue, Account destinationAccount)
         {
             if(this.Withdraw(transferValue))
             {
-                destinyAccount.Deposit(transferValue);
+                destinationAccount.Deposit(transferValue);
             }
         }
 
@@ -52,6 +54,11 @@ namespace BankDIO.Classes
             returnStr += "\nBalance: US$ " + this.balance.ToString("N2");
             returnStr += "\nCredit: US$ " + this.credit.ToString("N2");
             return returnStr;
+        }
+
+        public string getCode()
+        {
+            return this.code;
         }
     }
 }
