@@ -1,0 +1,16 @@
+C:\Users\ModalGR\Desktop\cursos\.NET Fundamentals\BankDIO\bin\Debug\net5.0\BankDIO.exe
+C:\Users\ModalGR\Desktop\cursos\.NET Fundamentals\BankDIO\bin\Debug\net5.0\BankDIO.deps.json
+C:\Users\ModalGR\Desktop\cursos\.NET Fundamentals\BankDIO\bin\Debug\net5.0\BankDIO.runtimeconfig.json
+C:\Users\ModalGR\Desktop\cursos\.NET Fundamentals\BankDIO\bin\Debug\net5.0\BankDIO.runtimeconfig.dev.json
+C:\Users\ModalGR\Desktop\cursos\.NET Fundamentals\BankDIO\bin\Debug\net5.0\BankDIO.dll
+C:\Users\ModalGR\Desktop\cursos\.NET Fundamentals\BankDIO\bin\Debug\net5.0\ref\BankDIO.dll
+C:\Users\ModalGR\Desktop\cursos\.NET Fundamentals\BankDIO\bin\Debug\net5.0\BankDIO.pdb
+C:\Users\ModalGR\Desktop\cursos\.NET Fundamentals\BankDIO\obj\Debug\net5.0\BankDIO.csproj.AssemblyReference.cache
+C:\Users\ModalGR\Desktop\cursos\.NET Fundamentals\BankDIO\obj\Debug\net5.0\BankDIO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ModalGR\Desktop\cursos\.NET Fundamentals\BankDIO\obj\Debug\net5.0\BankDIO.AssemblyInfoInputs.cache
+C:\Users\ModalGR\Desktop\cursos\.NET Fundamentals\BankDIO\obj\Debug\net5.0\BankDIO.AssemblyInfo.cs
+C:\Users\ModalGR\Desktop\cursos\.NET Fundamentals\BankDIO\obj\Debug\net5.0\BankDIO.csproj.CoreCompileInputs.cache
+C:\Users\ModalGR\Desktop\cursos\.NET Fundamentals\BankDIO\obj\Debug\net5.0\BankDIO.dll
+C:\Users\ModalGR\Desktop\cursos\.NET Fundamentals\BankDIO\obj\Debug\net5.0\ref\BankDIO.dll
+C:\Users\ModalGR\Desktop\cursos\.NET Fundamentals\BankDIO\obj\Debug\net5.0\BankDIO.pdb
+C:\Users\ModalGR\Desktop\cursos\.NET Fundamentals\BankDIO\obj\Debug\net5.0\BankDIO.genruntimeconfig.cache
